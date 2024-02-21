@@ -11,6 +11,7 @@ In many cases, when an application deals with a user's GPS location, especially 
 3. Transition probability ($p(x_{i+1}|x_i)$): The likelihood of transitioning from $x_i$ to $x_{i+1}$ correlates with the distance between two points in time, i and i+1. Because noises exhibit normal behavior, we anticipate that real locations will be near noisy locations. Therefore, we can model the transition probability using an exponential distribution.
 
 $$p(o_i | s_j) = \frac{1}{\sqrt{2\pi\sigma_{o}}} e^{-0.5\frac{||o_i-x_{i,j}||^2}{\sigma_{o}^2}}$$
+
 $$p(x_{i+1}|x_i) = \frac{1}{\lambda} e^{\frac{-| \ ||x_{i+1} - x_i|| - ||o_{i+1} - o_i|| \ |}{\lambda}}$$
 
 $s_j$ is a street segment and $x_{i,j}$ is the projection of $o_i$ on $s_j$.
