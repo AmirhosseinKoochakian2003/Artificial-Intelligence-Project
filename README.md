@@ -7,8 +7,8 @@ This repository contains two phases of the Artificial Intelligence course projec
 In many cases, when an application deals with a user's GPS location, especially in urban areas and areas with tall towers, the GPS signal can become too noisy. An interesting fact about noises is that they can be modeled as a hidden Markov model. The hidden variables represent the actual locations, while the observations represent noisy GPS locations. To find the most likely sequence of locations, we can employ the Viterbi algorithm. Briefly, I used the following steps to solve the problem:
 
 1. To determine the actual location, I collect the four nearest street segments to the noisy location. The noisy location is then projected onto these segments to form our state values.
-2. Emission probability ($p(o_i|x_i)$): I modeled this probability using a normal distribution. It is a reasonable choice since most noise occurrences have a small domain, and noises with a large radius are uncommon.
-3. Transition probability ($p(x_{i+1}|x_i)$): The likelihood of transitioning from $x_i$ to $x_{i+1}$ correlates with the distance between two points in time, i and i+1. Because noises exhibit normal behavior, we anticipate that real locations will be near noisy locations. Therefore, we can model the transition probability using an exponential distribution.
+2. Emission probability ( $p(o_i|x_i)$ ): I modeled this probability using a normal distribution. It is a reasonable choice since most noise occurrences have a small domain, and noises with a large radius are uncommon.
+3. Transition probability ( $p(x_{i+1}|x_i)$ ): The likelihood of transitioning from $x_i$ to $x_{i+1}$ correlates with the distance between two points in time, i and i+1. Because noises exhibit normal behavior, we anticipate that real locations will be near noisy locations. Therefore, we can model the transition probability using an exponential distribution.
 
 $$p(o_i | s_j) = \frac{1}{\sqrt{2\pi}\sigma_{o}} e^{-0.5\frac{||o_i-x_{i,j}||^2}{\sigma_{o}^2}}$$
 
