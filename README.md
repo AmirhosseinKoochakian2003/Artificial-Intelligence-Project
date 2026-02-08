@@ -27,7 +27,7 @@ After doing previous steps, we are ready to perform viterbi, so the process of t
 
 ---
 
-# Phase 2 : Destination Suggestion
+# Phase 2 : Destination Recommender
 In many applications there is a recommender system that suggest destination based on passeneger's history. These recommenders use a set of parameters or features to predict the destination. In this project we engineered these features and implemented such a system with three different algorithm: 1.KNN, 2.XGBoost and 3.Neural Networks. 
 
 | algorithm | train accuracy | test accuracy |
